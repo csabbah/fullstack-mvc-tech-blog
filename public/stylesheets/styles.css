@@ -1,9 +1,8 @@
-/* -------- --------- --------- Custom properties */
+/* -------- --------- --------- Root properties */
 :root {
   --main-color: rgb(127, 255, 163);
 }
 
-/* -------- --------- --------- Root properties */
 * {
   margin: 0;
   padding: 0;
@@ -45,8 +44,9 @@ nav a:nth-child(1) {
   margin-left: 0;
 }
 
-/* -------- --------- --------- Single Post */
-#homepage-posts {
+/* -------- --------- --------- Single Post (and one dashboard styling) */
+#homepage-posts,
+#dashboard-posts {
   margin: 0 20px;
 }
 
@@ -87,7 +87,7 @@ nav a:nth-child(1) {
   font-size: 20px;
 }
 
-/* -------- --------- --------- Login / Sign up */
+/* -------- --------- --------- Login / Sign up / Dashboard*/
 .login-container,
 .signup-container {
   margin: 20px 32px;
@@ -100,14 +100,16 @@ nav a:nth-child(1) {
 }
 
 #login-form,
-#signup-form {
+#signup-form,
+#addPost-form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
 #login-form input,
-#signup-form input {
+#signup-form input,
+#addPost-form input {
   margin-bottom: 6px;
   width: 275px;
   padding: 3px 0;
@@ -116,13 +118,26 @@ nav a:nth-child(1) {
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 #login-form input:nth-child(2),
-#signup-form input:nth-child(3) {
+#signup-form input:nth-child(3),
+#addPost-form input:nth-child(2) {
   margin-bottom: 0;
 }
 #login-form input::placeholder,
-#signup-form input::placeholder {
+#signup-form input::placeholder,
+#addPost-form input::placeholder,
+#addPost-form textarea::placeholder {
   opacity: 0.9;
   font-size: 15px;
+}
+
+#login-form button,
+#signup-form button,
+#addPost-form button {
+  padding: 3px 30px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: var(--main-color);
 }
 
 #loginHr {
@@ -131,11 +146,64 @@ nav a:nth-child(1) {
   opacity: 0.5;
 }
 
-#login-form button,
-#signup-form button {
-  padding: 3px 30px;
-  border: none;
-  border-radius: 5px;
+/* Dashboard */
+.addPost-container h1 {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+#your-posts {
+  font-size: 25px;
+  margin-top: 20px;
+  margin-left: 32px;
+}
+.addPost-container {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 32px;
+}
+
+#addPost-form textarea {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  resize: none;
+  width: 500px;
+  height: 100px;
+  font-size: 15px;
+  padding-top: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+#addPost-form input {
+  width: 500px;
+}
+
+#dashboardHr {
+  width: 50%;
+  margin-left: 32px;
+}
+#dashboard-posts #single-post {
+  position: relative;
+}
+
+#dashboard-posts #single-post:nth-child(1) {
   margin-top: 10px;
+}
+
+#post-controls {
+  background-color: rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#post-controls button {
+  width: 150px;
+  padding: 5px 30px;
+  border: none;
+  margin: 0 2px;
   background-color: var(--main-color);
+  cursor: pointer;
+}
+
+#post-controls button:nth-child(2) {
+  margin-right: 0;
 }
