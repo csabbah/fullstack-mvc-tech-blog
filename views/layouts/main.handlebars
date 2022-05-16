@@ -2,21 +2,25 @@
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Just Tech News</title>
+    <link rel='stylesheet' href='./stylesheets/styles.css' />
+    <title>Tech Blog</title>
   </head>
   <body>
     <div class='wrapper'>
       <header>
+        <h1>The Tech Blog</h1>
         <nav>
-          <a href='/login'>login</a>
+          <a href='/'>Home</a>
+          <a href='/dashboard'>Dashboard</a>
+          <a href='/login'>Login</a>
+          <a href='/logout'>Logout</a>
         </nav>
+        {{! Empty element to be used in tandem with space-between to fill in required space }}
+        <div id='empty'></div>
       </header>
       <main>
         {{{body}}}
       </main>
-      <footer>
-        Thanks for visiting!
-      </footer>
     </div>
   </body>
 </html>
