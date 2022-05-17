@@ -1,10 +1,12 @@
 <div id='homepage-posts'>
   {{#each posts as |post|}}
-    <div id='single-post'>
+    <a id='single-post' href='/post/{{post.id}}'>
       <div id='post-header'>
-        <h1 id='post-title'>{{post.title}}</h1>
+        <p id='post-title'>{{post.title}}</p>
         <p id='post-date'>{{format_date post.created_at}}</p>
       </div>
-    </div>
+    </a>
+
   {{/each}}
 </div>
+<script src='/javascript/home-page.js'></script>

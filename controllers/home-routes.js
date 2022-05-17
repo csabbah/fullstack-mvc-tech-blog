@@ -1,4 +1,3 @@
-// The main page with all the main templates
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User } = require('../models');
@@ -14,6 +13,27 @@ router.get('/', (req, res) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       // Render the homepage template and include the posts object we just declared
       res.render('homepage', { posts });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get('/post/:id', (req, res) => {
+  Post.findOne({
+    where: {
+      id: req.params.id, // params == endpoint url data
+    },
+    attributes: ['id', 'title', 'created_at', 'user_id', 'description'],
+  })
+    .then((dbPostData) => {
+      const title = dbPostData.dataValues.title;
+      const date = dbPostData.dataValues.created_at;
+      const description = dbPostData.dataValues.description;
+
+      const post = { title, date, description };
+      res.render('single-post', { post });
     })
     .catch((err) => {
       console.log(err);

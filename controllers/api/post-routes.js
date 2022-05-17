@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Post, User } = require('../../models');
 
-// Create a new post based on the form input values (dashboard template)
+// Create a new post using the form input values from the dashboard page (template)
 router.post('/', (req, res) => {
   Post.create({
     title: req.body.post_title,

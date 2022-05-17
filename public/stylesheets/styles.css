@@ -54,12 +54,17 @@ nav a:nth-child(1) {
 }
 
 #single-post {
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 35px 10px;
   width: 70%;
   box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+#dashboard-posts #single-post {
+  width: 52%;
 }
 
 #post-header {
@@ -88,6 +93,10 @@ nav a:nth-child(1) {
   padding: 15px 15px;
   height: 125px;
   font-size: 20px;
+}
+
+#page-singlepost {
+  margin: 0 20px;
 }
 
 /* -------- --------- --------- Login / Sign up / Dashboard*/
