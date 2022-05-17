@@ -2,12 +2,13 @@
 const router = require('express').Router();
 const { Post } = require('../models');
 
+// Return all posts associated with the user
 router.get('/', (req, res) => {
   res.render('dashboard');
 
-  // Return all active posts in the data base
+  // Return all users active posts in the data base
   // Post.findAll({
-  //   attributes: ['id', 'post_url', 'title', 'created_at', 'user_id'],
+  //   attributes: ['id', 'title', 'created_at', 'user_id'],
   // })
   //   .then((dbPostData) => {
   //     res.json(dbPostData);

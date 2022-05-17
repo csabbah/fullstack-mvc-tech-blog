@@ -4,14 +4,15 @@ const sequelize = require('../config/connection');
 const { Post, User } = require('../models');
 
 // In this path, the main.handlebars template renders always and inside the {{{body}}} section....
-// We render the homepage.handlebars template (which is a simple <h1>Hi Son</h1>)
+// We render the homepage.handlebars template
 router.get('/', (req, res) => {
   Post.findAll({
-    attributes: ['id', 'post_url', 'title', 'created_at', 'user_id'],
+    attributes: ['id', 'title', 'created_at', 'user_id'],
   })
     .then((dbPostData) => {
-      // serialize the data
+      // serialize the data, essentially making it an easier object to iterate through
       const posts = dbPostData.map((post) => post.get({ plain: true }));
+      // Render the homepage template and include the posts object we just declared
       res.render('homepage', { posts });
     })
     .catch((err) => {
