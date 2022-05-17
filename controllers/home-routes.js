@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 
 // In this path, the main.handlebars template renders always and inside the {{{body}}} section....
 // We render the homepage.handlebars template
@@ -26,13 +26,35 @@ router.get('/post/:id', (req, res) => {
       id: req.params.id, // params == endpoint url data
     },
     attributes: ['id', 'title', 'created_at', 'user_id', 'description'],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username'],
+        },
+      },
+    ],
   })
     .then((dbPostData) => {
       const title = dbPostData.dataValues.title;
       const date = dbPostData.dataValues.created_at;
       const description = dbPostData.dataValues.description;
+      const post = {
+        title,
+        date,
+        description,
+        comments: [],
+        users: [],
+      };
+      // For each comment, push it to the array inside our object
+      for (let i = 0; i < dbPostData.dataValues.comments.length; i++) {
+        let username = dbPostData.dataValues.comments[i].user.username;
+        let commentText = dbPostData.dataValues.comments[i].comment_text;
+        post.comments.push({ user: username, text: commentText });
+      }
 
-      const post = { title, date, description };
       res.render('single-post', { post });
     })
     .catch((err) => {

@@ -1,9 +1,21 @@
 <div id='page-singlepost'>
   <div id='single-post'>
     <div id='post-header'>
-        <p id='post-title'>{{post.title}}</p>
-        <p id='post-date'>{{format_date post.date}}</p>
+      <p id='post-title'>{{post.title}}</p>
+      <p id='post-date'>{{format_date post.date}}</p>
     </div>
-    <p id="post-body">{{post.description}}</p>
+    <p id='post-body'>{{post.description}}</p>
   </div>
-</div
+  <div id='comment-section'>
+    {{#each post.comments as |comment|}}
+      <div id='single-comment'>
+        <div id='comment-wrapper'>
+          <p id='user'>{{comment.user}}</p>
+          -
+          <p id='comment'>{{comment.text}}</p>
+        </div>
+      </div>
+      <hr />
+    {{/each}}
+  </div>
+</div>

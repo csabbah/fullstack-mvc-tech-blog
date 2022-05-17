@@ -58,9 +58,9 @@ nav a:nth-child(1) {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 35px 10px;
+  margin: 30px 10px;
   width: 70%;
-  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.25);
 }
 
 #dashboard-posts #single-post {
@@ -95,8 +95,42 @@ nav a:nth-child(1) {
   font-size: 20px;
 }
 
+/* ----------------- Single post */
 #page-singlepost {
   margin: 0 20px;
+}
+
+#comment-section {
+  width: 70%;
+  margin: 0 10px;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+#single-comment {
+  display: flex;
+  align-items: flex-start;
+  height: 100px;
+  margin: 0 10px;
+}
+
+#comment-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 20px 10px;
+}
+
+/* Comment text */
+#comment {
+  font-size: 18px;
+  margin-left: 10px;
+}
+/* User name */
+#user {
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+#page-singlepost hr {
+  border: 2px solid white;
 }
 
 /* -------- --------- --------- Login / Sign up / Dashboard*/
@@ -153,6 +187,8 @@ nav a:nth-child(1) {
 }
 
 #loginHr {
+  margin-bottom: 30px;
+  margin-top: 30px;
   width: 35%;
   margin-left: 32px;
   opacity: 0.5;
@@ -165,12 +201,12 @@ nav a:nth-child(1) {
 }
 #your-posts {
   font-size: 25px;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-left: 32px;
 }
 .addPost-container {
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   margin-left: 32px;
 }
 
@@ -185,8 +221,14 @@ nav a:nth-child(1) {
   padding-left: 6px;
   padding-right: 6px;
 }
+
 #addPost-form input {
   width: 500px;
+}
+
+#addPost-form textarea,
+#addPost-form input {
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 #dashboardHr {
