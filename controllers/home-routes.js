@@ -35,18 +35,23 @@ router.get('/post/:id', (req, res) => {
           attributes: ['username'],
         },
       },
+      {
+        model: User,
+        attributes: ['username'],
+      },
     ],
   })
     .then((dbPostData) => {
       const title = dbPostData.dataValues.title;
+      const user = dbPostData.dataValues.user.username;
       const date = dbPostData.dataValues.created_at;
       const description = dbPostData.dataValues.description;
       const post = {
         title,
         date,
+        user,
         description,
         comments: [],
-        users: [],
       };
       // For each comment, push it to the array inside our object
       for (let i = 0; i < dbPostData.dataValues.comments.length; i++) {

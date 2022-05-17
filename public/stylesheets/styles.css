@@ -93,6 +93,7 @@ nav a:nth-child(1) {
 }
 
 #post-body {
+  background-color: rgba(0, 0, 0, 0.025);
   overflow: scroll;
   padding: 15px 15px;
   height: 125px;
@@ -122,12 +123,16 @@ nav a:nth-child(1) {
   margin: 20px 10px;
 }
 
-/* Comment text */
+#post-user {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+}
+
 #comment {
   font-size: 18px;
   margin-left: 10px;
 }
-/* User name */
 #user {
   font-weight: 700;
   margin-right: 10px;

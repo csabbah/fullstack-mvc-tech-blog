@@ -5,6 +5,7 @@
       <p id='post-date'>{{format_date post.date}}</p>
     </div>
     <p id='post-body'>{{post.description}}</p>
+    <p id='post-user'>- {{post.user}}</p>
   </div>
   <div id='comment-section'>
     {{#each post.comments as |comment|}}
