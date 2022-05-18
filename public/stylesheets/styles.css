@@ -290,16 +290,23 @@ nav a:nth-child(1) {
   margin-right: 0;
 }
 
-#add-post {
+#add-post,
+#login-btn,
+#submit-btn,
+#logout {
   cursor: pointer;
   transition: var(--base-transition);
 }
 
-#add-post:hover {
+#add-post:hover,
+#login-btn:hover,
+#submit-btn:hover {
   background-color: var(--main-color-hover);
   transition: var(--base-transition);
 }
 
-#add-post:active {
+#add-post:active,
+#login-btn:active,
+#submit-btn:active {
   background-color: var(--main-color);
 }

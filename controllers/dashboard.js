@@ -3,7 +3,7 @@ const { Post } = require('../models');
 
 // Return all posts associated with the user
 router.get('/', (req, res) => {
-  res.render('dashboard');
+  res.render('dashboard', { loggedIn: true });
 
   // Return all users active posts in the data base
   // Post.findAll({
