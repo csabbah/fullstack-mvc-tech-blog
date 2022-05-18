@@ -1,6 +1,8 @@
 /* -------- --------- --------- Root properties */
 :root {
   --main-color: rgb(127, 255, 163);
+  --main-color-hover: rgb(118, 234, 151);
+  --base-transition: 0.1s all ease-in-out;
 }
 
 * {
@@ -30,6 +32,8 @@ header {
 }
 
 header h1 {
+  cursor: pointer;
+  user-select: none;
   width: 275px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -41,6 +45,13 @@ nav a {
   margin-left: 10px;
   text-decoration: none;
   color: white;
+}
+nav a:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+nav a:active {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 nav a:nth-child(1) {
@@ -64,7 +75,7 @@ nav a:nth-child(1) {
   justify-content: space-between;
   margin: 30px 10px;
   width: 70%;
-  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.15);
 }
 
 #dashboard-posts #single-post {
@@ -73,10 +84,20 @@ nav a:nth-child(1) {
 
 #post-header {
   background-color: var(--main-color);
-  height: 35px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: 0.1s all ease-in-out;
+}
+
+#homepage-posts #single-post #post-header:hover {
+  background-color: var(--main-color-hover);
+  transition: var(--base-transition);
+}
+
+#homepage-posts #single-post #post-header:active {
+  background-color: var(--main-color);
 }
 
 #post-title,
@@ -93,7 +114,6 @@ nav a:nth-child(1) {
 }
 
 #post-body {
-  background-color: rgba(0, 0, 0, 0.025);
   overflow: scroll;
   padding: 15px 15px;
   height: 125px;
@@ -108,7 +128,7 @@ nav a:nth-child(1) {
 #comment-section {
   width: 70%;
   margin: 0 10px;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 #single-comment {
   display: flex;
@@ -253,7 +273,6 @@ nav a:nth-child(1) {
 }
 
 #post-controls {
-  background-color: rgba(0, 0, 0, 0.04);
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -269,4 +288,18 @@ nav a:nth-child(1) {
 
 #post-controls button:nth-child(2) {
   margin-right: 0;
+}
+
+#add-post {
+  cursor: pointer;
+  transition: var(--base-transition);
+}
+
+#add-post:hover {
+  background-color: var(--main-color-hover);
+  transition: var(--base-transition);
+}
+
+#add-post:active {
+  background-color: var(--main-color);
 }
