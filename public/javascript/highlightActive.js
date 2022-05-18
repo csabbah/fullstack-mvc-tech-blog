@@ -1,4 +1,4 @@
-// Simply highlights the active nav item
+// Highlights the active nav item
 
 const navItems = document.querySelectorAll('.navItem');
 

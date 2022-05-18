@@ -20,6 +20,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// Renders a single post with more detail
 router.get('/post/:id', (req, res) => {
   Post.findOne({
     where: {
