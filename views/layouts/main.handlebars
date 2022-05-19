@@ -23,7 +23,11 @@
           {{/if}}
         </nav>
         {{! Empty element to be used in tandem with space-between to fill in required space }}
-        <div id='empty'></div>
+        <div id='empty'>
+          {{#if username}}
+            <p style='color: white;'>Logged in as {{username}}</p>
+          {{/if}}
+        </div>
       </header>
       <main>
         {{{body}}}
