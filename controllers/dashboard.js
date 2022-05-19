@@ -26,11 +26,11 @@ router.get('/', (req, res) => {
 
       // Check how many posts a user has so we can run a loop or just return the single data
       if (dbPostData.length == 1) {
-        const title = post.dataValues.title;
-        const description = post.dataValues.description;
-        const date = post.dataValues.created_at;
-        const postId = post.dataValues.id;
-        post.push({ postId, title, description, date });
+        const title = dbPostData[0].dataValues.title;
+        const description = dbPostData[0].dataValues.description;
+        const date = dbPostData[0].dataValues.created_at;
+        const postId = dbPostData[0].dataValues.id;
+        posts.push({ postId, title, description, date });
       } else {
         dbPostData.forEach((post) => {
           const title = post.dataValues.title;

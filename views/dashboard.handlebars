@@ -24,9 +24,14 @@
       </p>
       <div id='post-controls'>
         <button id='edit-post'>Edit post</button>
-        <button data-post-id={{post.postId}} id='delete-post'>Delete post</button>
+        <button
+          data-post-id={{post.postId}}
+          class='post-id'
+          id='delete-post'
+        >Delete post</button>
       </div>
     </div>
   {{/each}}
 </div>
 <script src='/javascript/add-post.js'></script>
+<script src='/javascript/delete-post.js'></script>
