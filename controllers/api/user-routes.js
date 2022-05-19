@@ -50,11 +50,10 @@ router.post('/login', (req, res) => {
       req.session.loggedIn = true;
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
-
-    console.log(true, req.session);
   });
 });
 
+// Terminate sessions and redirect to main page
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
       // serialize the data, essentially making it an easier object to iterate through
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       // Render the homepage template and include the posts object we just declared
-      res.render('homepage', { posts });
+      res.render('homepage', { posts, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
@@ -64,7 +64,7 @@ router.get('/post/:id', (req, res) => {
         post.comments.push({ user: username, text: commentText });
       }
 
-      res.render('single-post', { post });
+      res.render('single-post', { post, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
