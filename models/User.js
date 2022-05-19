@@ -22,6 +22,9 @@ User.init(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [4],
+      },
     },
     email: {
       type: DataTypes.STRING,
