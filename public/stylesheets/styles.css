@@ -11,6 +11,29 @@
   box-sizing: border-box;
 }
 
+button {
+  padding: 3px 30px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: var(--main-color);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+button:hover {
+  background-color: var(--main-color-hover);
+  transition: var(--base-transition);
+}
+
+button:active {
+  background-color: var(--main-color);
+}
+
 /* -------- --------- --------- Header */
 .wrapper {
   position: relative;
@@ -77,6 +100,7 @@ nav a:active {
   margin: 30px 10px;
   width: 70%;
   box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.15);
+  opacity: 0.9;
 }
 
 #dashboard-posts #single-post {
@@ -92,13 +116,17 @@ nav a:active {
   transition: 0.1s all ease-in-out;
 }
 
-#homepage-posts #single-post #post-header:hover {
-  background-color: var(--main-color-hover);
+#homepage-posts #single-post:hover {
+  opacity: 1;
+  transform: scale(1.01);
+  box-shadow: 10px 10px 20px 3px rgba(0, 0, 0, 0.15);
   transition: var(--base-transition);
 }
 
-#homepage-posts #single-post #post-header:active {
-  background-color: var(--main-color);
+#homepage-posts #single-post:active {
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.15);
+  transform: scale(1);
+  transition: var(--base-transition);
 }
 
 #post-title,
@@ -117,8 +145,13 @@ nav a:active {
 #post-body {
   overflow: scroll;
   padding: 15px 15px;
-  height: 125px;
-  font-size: 20px;
+  height: 120px;
+  font-size: 18px;
+}
+
+#homepage-posts #post-body {
+  height: 80px;
+  font-size: 18px;
 }
 
 /* ----------------- Single post */
@@ -128,14 +161,15 @@ nav a:active {
 
 #comment-section {
   width: 70%;
-  margin: 0 10px;
-  background-color: rgba(0, 0, 0, 0.05);
+  margin: 0 8px;
 }
 #single-comment {
   display: flex;
   align-items: flex-start;
   height: 100px;
-  margin: 0 10px;
+  margin: 10px 0;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
 }
 
 #comment-wrapper {
@@ -159,8 +193,33 @@ nav a:active {
   margin-right: 10px;
 }
 
-#page-singlepost hr {
-  border: 2px solid white;
+#comment-section-divider {
+  margin-top: 25px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+  height: 1px;
+  opacity: 0.2;
+  width: 69.9%;
+  background-color: black;
+}
+
+#comment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+
+/* The textarea element */
+#comment-field {
+  width: 40%;
+  resize: none;
+  height: 100px;
+  font-family: inherit;
+  padding-left: 10px;
+  padding-top: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 /* -------- --------- --------- Login / Sign up / Dashboard*/
@@ -206,16 +265,6 @@ nav a:active {
   font-size: 15px;
 }
 
-#login-form button,
-#signup-form button,
-#addPost-form button {
-  padding: 3px 30px;
-  border: none;
-  border-radius: 5px;
-  margin-top: 10px;
-  background-color: var(--main-color);
-}
-
 #loginHr {
   margin-bottom: 30px;
   margin-top: 30px;
@@ -225,6 +274,10 @@ nav a:active {
 }
 
 /* Dashboard */
+#no-posts {
+  margin-top: 12px;
+  margin-left: 12px;
+}
 .addPost-container h1 {
   font-size: 25px;
   margin-bottom: 5px;
@@ -297,17 +350,4 @@ nav a:active {
 #logout {
   cursor: pointer;
   transition: var(--base-transition);
-}
-
-#add-post:hover,
-#login-btn:hover,
-#submit-btn:hover {
-  background-color: var(--main-color-hover);
-  transition: var(--base-transition);
-}
-
-#add-post:active,
-#login-btn:active,
-#submit-btn:active {
-  background-color: var(--main-color);
 }

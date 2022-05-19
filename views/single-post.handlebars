@@ -7,6 +7,22 @@
     <p id='post-body'>{{post.description}}</p>
     <p id='post-user'>- {{post.user}}</p>
   </div>
+  {{#if loggedIn}}
+    <form id='comment-form'>
+      <textarea id='comment-field' placeholder='Add comment'></textarea>
+      <button type='submit'>Submit</button>
+    </form>
+  {{else}}
+    <form id='comment-form'>
+      <textarea
+        id='comment-field'
+        disabled='true'
+        placeholder='To comment on the post you must be logged in.'
+      ></textarea>
+      <button disabled='true' type='submit'>Submit</button>
+    </form>
+  {{/if}}
+  <hr id='comment-section-divider' />
   <div id='comment-section'>
     {{#each post.comments as |comment|}}
       <div id='single-comment'>
@@ -16,7 +32,6 @@
           <p id='comment'>{{comment.text}}</p>
         </div>
       </div>
-      <hr />
     {{/each}}
   </div>
 </div>

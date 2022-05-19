@@ -5,11 +5,8 @@ const { Post, User, Comment } = require('../models');
 // In this path, the main.handlebars template renders always and inside the {{{body}}} section....
 // We render the homepage.handlebars template
 router.get('/', (req, res) => {
-  // This checks if the user is loggedIn via sessions data
-  // console.log('THIS', req.session.loggedIn);
-
   Post.findAll({
-    attributes: ['id', 'title', 'created_at', 'user_id'],
+    attributes: ['id', 'title', 'description', 'created_at', 'user_id'],
   })
     .then((dbPostData) => {
       // serialize the data, essentially making it an easier object to iterate through
