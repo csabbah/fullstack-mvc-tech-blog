@@ -264,7 +264,7 @@ nav a:active {
   padding: 3px 0;
   text-indent: 7px;
   border-radius: 3px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 #login-form input:nth-child(2),
 #signup-form input:nth-child(3),
@@ -281,10 +281,33 @@ nav a:active {
 
 #loginHr {
   margin-bottom: 30px;
-  margin-top: 30px;
+  margin-top: 35px;
   width: 35%;
   margin-left: 32px;
   opacity: 0.5;
+}
+#signup-status {
+  width: 60%;
+  font-family: inherit;
+  font-weight: 400;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+#addpost-status {
+  width: 60%;
+  font-family: inherit;
+  font-weight: 400;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+#comment-status {
+  width: 60%;
+  font-family: inherit;
+  font-weight: 400;
+  margin-top: 5px;
+  font-size: 14px;
 }
 
 /* Dashboard */

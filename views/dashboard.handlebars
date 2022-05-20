@@ -1,12 +1,18 @@
 <div class='addPost-container'>
   <h1>Add Post</h1>
   <form id='addPost-form'>
-    <input type='text' id='add-post-title' placeholder='Post Title' />
+    <input
+      type='text'
+      id='add-post-title'
+      placeholder='Post Title  *required'
+    />
     <textarea
       type='text'
       id='add-post-desc'
-      placeholder='Post description'
+      placeholder='Post description  *required'
     ></textarea>
+    <h1 id='addpost-status'>Fill in all required inputs with character count
+      above 4</h1>
     <button id='add-post' type='submit'>Post</button>
   </form>
 </div>

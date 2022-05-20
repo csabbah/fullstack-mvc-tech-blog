@@ -10,6 +10,7 @@
   <form id='comment-form'>
     {{#if loggedIn}}
       <textarea id='comment-field' placeholder='Add comment'></textarea>
+      <h1 id='comment-status'>Required character count above 4</h1>
       <button type='submit'>Submit</button>
     {{else}}
       <textarea
@@ -34,3 +35,4 @@
     {{/each}}
   </div>
 </div>
+<script src='/javascript/post-comment.js'></script>
