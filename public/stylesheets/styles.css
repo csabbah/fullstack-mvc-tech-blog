@@ -106,7 +106,7 @@ nav a:active {
 }
 
 #dashboard-posts #single-post {
-  width: 52%;
+  width: 70%;
 }
 
 #post-header {
@@ -179,6 +179,7 @@ nav a:active {
   margin: 0 8px;
 }
 #single-comment {
+  position: relative;
   display: flex;
   align-items: flex-start;
   height: 100px;
@@ -208,6 +209,12 @@ nav a:active {
   margin-right: 10px;
 }
 
+#comment-date {
+  font-size: 15px;
+  position: absolute;
+  right: 13px;
+  bottom: 10px;
+}
 #comment-section-divider {
   margin-top: 25px;
   margin-left: 10px;
@@ -369,7 +376,7 @@ nav a:active {
 }
 
 #dashboardHr {
-  width: 50%;
+  width: 67.4%;
   margin-left: 32px;
 }
 #dashboard-posts #single-post {
@@ -384,16 +391,35 @@ nav a:active {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
-#post-controls button {
-  width: 150px;
-  padding: 5px 30px;
-  border: none;
-  margin: 0 2px;
-  background-color: var(--main-color);
-  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
-#post-controls button:nth-child(2) {
-  margin-right: 0;
+#post-controls button:nth-child(1) {
+  margin-right: 10px;
+}
+
+.edit-title-input,
+.edit-body-input {
+  font-family: inherit;
+  border: 1px solid black;
+  padding: 5px 10px;
+  margin-left: 8px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.edit-title-input {
+  background: var(--main-color);
+}
+
+.edit-body-input {
+  resize: none;
+  width: 97.8%;
+  height: 120px;
+  margin-top: 3px;
+}
+
+.confirm-post {
+  display: none;
 }

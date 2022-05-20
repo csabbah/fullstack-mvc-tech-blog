@@ -76,7 +76,13 @@ router.get('/post/:id', (req, res) => {
       for (let i = 0; i < dbPostData.dataValues.comments.length; i++) {
         let username = dbPostData.dataValues.comments[i].user.username;
         let commentText = dbPostData.dataValues.comments[i].comment_text;
-        post.comments.push({ user: username, text: commentText });
+        let commentDate =
+          dbPostData.dataValues.comments[i].dataValues.created_at;
+        post.comments.push({
+          user: username,
+          text: commentText,
+          date: commentDate,
+        });
       }
       res.render('single-post', {
         post,

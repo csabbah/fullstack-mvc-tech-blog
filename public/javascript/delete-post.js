@@ -1,4 +1,4 @@
-const posts = document.querySelectorAll('.post-id');
+const posts = document.querySelectorAll('.delete-post-id');
 
 async function deletePost(id) {
   const response = await fetch(`/api/posts/${id}`, {
