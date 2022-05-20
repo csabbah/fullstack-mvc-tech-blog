@@ -24,15 +24,19 @@
 
   <hr id='comment-section-divider' />
   <div id='comment-section'>
-    {{#each post.comments as |comment|}}
-      <div id='single-comment'>
-        <div id='comment-wrapper'>
-          <p id='user'>{{comment.user}}</p>
-          -
-          <p id='comment'>{{comment.text}}</p>
+    {{#if post.comments}}
+      {{#each post.comments as |comment|}}
+        <div id='single-comment'>
+          <div id='comment-wrapper'>
+            <p id='user'>{{comment.user}}</p>
+            -
+            <p id='comment'>{{comment.text}}</p>
+          </div>
         </div>
-      </div>
-    {{/each}}
+      {{/each}}
+    {{else}}
+      <p>No comments posted</p>
+    {{/if}}
   </div>
 </div>
 <script src='/javascript/post-comment.js'></script>
