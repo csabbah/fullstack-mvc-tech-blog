@@ -23,8 +23,10 @@ router.get('/', (req, res) => {
     ],
   })
     .then((dbPostData) => {
-      // serialize the data, essentially making it an easier object to iterate through
+      // Serialize the data, essentially making it an easier object to iterate through
       const posts = dbPostData.map((post) => post.get({ plain: true }));
+      // Reverse the order of all posts so the newest posts show near the top
+      posts.reverse();
       // Render the homepage template and include the posts object we just declared
       res.render('homepage', {
         posts,

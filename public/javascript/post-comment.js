@@ -22,6 +22,8 @@ async function newCommentHandler(event) {
     commentStatusEl.textContent = 'Successfully posted!';
     commentStatusEl.style.color = 'Green';
 
+    // Add the function here to add a new post, need to refer the post ID
+    // Extract post id via dataset
     console.log(comment_text);
   }
 }

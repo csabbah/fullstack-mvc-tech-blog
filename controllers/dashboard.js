@@ -24,6 +24,7 @@ router.get('/', withAuth, (req, res) => {
     ],
   })
     .then((dbPostData) => {
+      // Declare an empty object to hold all the required data
       const posts = [];
 
       // Check how many posts a user has so we can run a loop or just return the single data
@@ -42,6 +43,8 @@ router.get('/', withAuth, (req, res) => {
           posts.push({ postId, title, description, date });
         });
       }
+      posts.reverse();
+
       // UPDATE THIS LINE OF BLOCK
       // For each comment, push it to the array inside our object
       // for (let i = 0; i < dbPostData.dataValues.comments.length; i++) {
