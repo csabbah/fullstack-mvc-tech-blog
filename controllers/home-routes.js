@@ -7,6 +7,20 @@ const { Post, User, Comment } = require('../models');
 router.get('/', (req, res) => {
   Post.findAll({
     attributes: ['id', 'title', 'description', 'created_at', 'user_id'],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username'],
+        },
+      },
+      {
+        model: User,
+        attributes: ['username'],
+      },
+    ],
   })
     .then((dbPostData) => {
       // serialize the data, essentially making it an easier object to iterate through
@@ -64,7 +78,6 @@ router.get('/post/:id', (req, res) => {
         let commentText = dbPostData.dataValues.comments[i].comment_text;
         post.comments.push({ user: username, text: commentText });
       }
-
       res.render('single-post', {
         post,
         loggedIn: req.session.loggedIn,
