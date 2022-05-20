@@ -18,6 +18,7 @@ button {
   margin-top: 10px;
   cursor: pointer;
   background-color: var(--main-color);
+  transition: var(--base-transition);
 }
 
 button:disabled {
@@ -248,6 +249,14 @@ nav a:active {
   margin-bottom: 5px;
 }
 
+#login-btn,
+#submit-btn {
+  margin-top: 0;
+}
+
+#add-post {
+  margin-top: 5px;
+}
 #login-form,
 #signup-form,
 #addPost-form {
@@ -286,13 +295,6 @@ nav a:active {
   margin-left: 32px;
   opacity: 0.5;
 }
-#signup-status {
-  width: 60%;
-  font-family: inherit;
-  font-weight: 400;
-  margin-top: 10px;
-  font-size: 14px;
-}
 
 #addpost-status {
   width: 60%;
@@ -306,10 +308,25 @@ nav a:active {
   width: 60%;
   font-family: inherit;
   font-weight: 400;
-  margin-top: 5px;
+  margin-top: 8px;
   font-size: 14px;
 }
 
+#signup-status {
+  width: 60%;
+  font-family: inherit;
+  font-weight: 400;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+#signin-status {
+  width: 60%;
+  font-family: inherit;
+  font-weight: 400;
+  margin: 8px 0;
+  font-size: 14px;
+}
 /* Dashboard */
 #no-posts {
   margin-top: 12px;
@@ -379,12 +396,4 @@ nav a:active {
 
 #post-controls button:nth-child(2) {
   margin-right: 0;
-}
-
-#add-post,
-#login-btn,
-#submit-btn,
-#logout {
-  cursor: pointer;
-  transition: var(--base-transition);
 }

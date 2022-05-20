@@ -1,7 +1,7 @@
 // ----- ----- ----- ----- Below code is executed in the login template
 
 const loginForm = document.getElementById('login-form');
-
+const loginStatusEl = document.getElementById('signin-status');
 async function loginFormHandler(event) {
   event.preventDefault();
   // Extract the values from the login form
@@ -20,7 +20,12 @@ async function loginFormHandler(event) {
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
-      alert(response.statusText);
+      loginStatusEl.textContent = 'Email or Password is incorrect';
+      loginStatusEl.style.color = 'red';
+      setTimeout(() => {
+        loginStatusEl.textContent = 'Fill in required values';
+        loginStatusEl.style.color = 'black';
+      }, 2500);
     }
   }
 }
