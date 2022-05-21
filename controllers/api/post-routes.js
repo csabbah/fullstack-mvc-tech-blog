@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
 const { Post, User } = require('../../models');
 
 // Create a new post using the form input values from the dashboard page (template)
@@ -16,6 +15,7 @@ router.post('/', (req, res) => {
     });
 });
 
+// Delete a post
 router.delete('/:id', (req, res) => {
   Post.destroy({
     where: {
@@ -35,6 +35,7 @@ router.delete('/:id', (req, res) => {
     });
 });
 
+// Update a post
 router.put('/:id', (req, res) => {
   Post.update(
     {

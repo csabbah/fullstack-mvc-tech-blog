@@ -2,7 +2,25 @@
 
 const addCommentForm = document.getElementById('comment-form');
 
-async function newCommentHandler(event) {
+async function addComment(newComment, postId) {
+  const response = await fetch(`/api/comments/${postId}`, {
+    method: 'POST',
+    body: JSON.stringify({
+      comment_text: newComment,
+      post_id: postId,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  if (response.ok) {
+    document.location.replace(`/post/${postId}`);
+  } else {
+    alert(response.statusText);
+  }
+}
+
+const newCommentHandler = (event) => {
   event.preventDefault();
 
   // Extract the values from the form
@@ -21,12 +39,14 @@ async function newCommentHandler(event) {
   } else {
     commentStatusEl.textContent = 'Successfully posted!';
     commentStatusEl.style.color = 'Green';
-
-    // Add the function here to add a new post, need to refer the post ID
-    // Extract post id via dataset
-    console.log(comment_text);
+    // Extract the post id via the active web url
+    const postId = window.location.pathname.split('/')[2];
+    // After 1 second, add the comment to the database
+    setTimeout(() => {
+      addComment(comment_text, postId);
+    }, 1000);
   }
-}
+};
 
 // Add the event handler for the form submission
 addCommentForm.addEventListener('submit', newCommentHandler);
