@@ -11,6 +11,7 @@
       id='add-post-desc'
       placeholder='Post description  *required'
     ></textarea>
+
     <h1 id='addpost-status'>Fill in all required inputs with character count
       above 4</h1>
     <button id='add-post' type='submit'>Post</button>
@@ -48,6 +49,8 @@
           class='confirm-post'
           id='confirm-post-{{post.postId}}'
         >Confirm</button>
+        <p id='edit-post-status'>Make sure the new post title and body are
+          greater than 4 characters</p>
       </div>
     </div>
   {{/each}}

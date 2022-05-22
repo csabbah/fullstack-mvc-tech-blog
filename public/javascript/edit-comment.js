@@ -26,7 +26,7 @@ const handleSubmit = (confirmBtn, commentId) => {
       document.getElementById('new-comment-status').style.display = 'flex';
       setTimeout(() => {
         document.getElementById('new-comment-status').style.display = 'none';
-      }, 2250);
+      }, 3000);
     } else {
       editComment(commentId, newComment);
     }

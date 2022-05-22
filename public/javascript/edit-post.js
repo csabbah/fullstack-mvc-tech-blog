@@ -22,13 +22,18 @@ async function editPost(newTitle, newBody, postId) {
 // Handle the confirm button event, return the new data and update the existing post
 const handleSubmit = (btn, postId) => {
   btn.addEventListener('click', () => {
-    // ADD A CONDITION HERE TO CHECK THE LENGTH OF THE NEW TITLE AND BODY
-    // IF LENGTH IS UNDER OR EQUAL TO 4, DO NOT SUBMIT
-    // NEED TO CREATE A NEW ELEMENT SOMEH WERE TO NOTIFY THE USER
     const newTitle =
       btn.parentNode.parentNode.childNodes[1].childNodes[1].value;
     const newBody = btn.parentNode.parentNode.childNodes[3].value;
-    editPost(newTitle, newBody, postId);
+
+    if (newTitle.length <= 4 || newBody.length <= 4) {
+      document.getElementById('edit-post-status').style.display = 'flex';
+      setTimeout(() => {
+        document.getElementById('edit-post-status').style.display = 'none';
+      }, 3000);
+    } else {
+      editPost(newTitle, newBody, postId);
+    }
   });
 };
 
