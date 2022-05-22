@@ -437,6 +437,7 @@ nav a:active {
 }
 
 #dashboard-posts #single-post:nth-child(1) {
+  cursor: pointer;
   margin-top: 10px;
 }
 
@@ -449,6 +450,10 @@ nav a:active {
 }
 
 #post-controls button:nth-child(1) {
+  margin-right: 10px;
+}
+
+#post-controls button:nth-child(2) {
   margin-right: 10px;
 }
 
