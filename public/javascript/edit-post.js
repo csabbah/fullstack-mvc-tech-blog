@@ -46,12 +46,15 @@ editPosts.forEach((post) => {
     );
     confirmBtn.style.display = 'flex';
 
-    // Hide the delete and edit buttons
+    // Hide the edit, delete and view comments buttons
     document.getElementById(
       `delete-post-${post.dataset.postId}`
     ).style.display = 'none';
     document.getElementById(`edit-post-${post.dataset.postId}`).style.display =
       'none';
+    document.getElementById(
+      `view-comments-${post.dataset.postId}`
+    ).style.display = 'none';
 
     // ------------ TITLE HANDLING
     // Create a new input element

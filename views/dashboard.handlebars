@@ -44,7 +44,11 @@
           class='delete-post-id'
           id='delete-post-{{post.postId}}'
         >Delete post</button>
-        <button data-post-id={{post.postId}} class='view-comments'>View comments</button>
+        <button
+          data-post-id={{post.postId}}
+          id='view-comments-{{post.postId}}'
+          class='view-comments'
+        >View comments</button>
         <button
           data-post-id={{post.postId}}
           class='confirm-post'
