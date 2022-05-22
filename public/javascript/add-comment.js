@@ -37,14 +37,14 @@ const newCommentHandler = (event) => {
       commentStatusEl.style.color = 'black';
     }, 4000);
   } else {
-    commentStatusEl.textContent = 'Successfully posted!';
+    commentStatusEl.textContent = 'Successfully posted... refreshing';
     commentStatusEl.style.color = 'Green';
     // Extract the post id via the active web url
     const postId = window.location.pathname.split('/')[2];
     // After 1 second, add the comment to the database
     setTimeout(() => {
       addComment(comment_text, postId);
-    }, 1000);
+    }, 750);
   }
 };
 

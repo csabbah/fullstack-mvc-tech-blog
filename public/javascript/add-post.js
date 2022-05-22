@@ -38,7 +38,7 @@ async function newPostHandler(event) {
       addPostStatusEl.style.color = 'Green';
       setTimeout(() => {
         document.location.replace('/dashboard');
-      }, 1250);
+      }, 750);
     } else {
       // Otherwise alert the user accordingly
       alert(response.statusText);

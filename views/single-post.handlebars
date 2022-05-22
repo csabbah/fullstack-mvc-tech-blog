@@ -32,8 +32,9 @@
         <div id="single-comment" class="users-comment">
         {{!-- Add the comment id to the edit/delete button so we can extract the value in the click event listener  --}}
         <div id="comment-control">
-          <button data-comment-id="{{comment.commentId}}" class='edit-comment'>Edit</button>
-          <button data-comment-id="{{comment.commentId}}" class='delete-comment'>Delete</button>
+          <button data-comment-id="{{comment.commentId}}" id="confirm-comment-{{comment.commentId}}" class='confirm-comment'>Confirm</button>
+          <button data-comment-id="{{comment.commentId}}" id="edit-comment-{{comment.commentId}}" class='edit-comment'>Edit</button>
+          <button data-comment-id="{{comment.commentId}}" id="delete-comment-{{comment.commentId}}" class='delete-comment'>Delete</button>
         </div>
         {{else}}
         <div id='single-comment'>
@@ -53,6 +54,6 @@
     {{/if}}
   </div>
 </div>
-<script src='/javascript/post-comment.js'></script>
+<script src='/javascript/add-comment.js'></script>
 <script src='/javascript/edit-comment.js'></script>
 <script src='/javascript/delete-comment.js'></script>

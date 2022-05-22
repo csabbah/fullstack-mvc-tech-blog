@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 
+// Upload a new comment
 router.post('/:id', (req, res) => {
   // Check the session to make sure user is logged in
   Comment.create({
@@ -35,11 +36,12 @@ router.delete('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 // Edit a comment
 router.put('/:id', (req, res) => {
   Comment.update(
     {
-      comment_text: req.body.title,
+      comment_text: req.body.comment_text,
     },
     {
       where: {
