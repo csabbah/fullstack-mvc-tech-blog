@@ -22,7 +22,14 @@ const handleSubmit = (confirmBtn, commentId) => {
   confirmBtn.addEventListener('click', () => {
     let newComment =
       confirmBtn.parentNode.parentNode.childNodes[3].childNodes[3].value;
-    editComment(commentId, newComment);
+    if (newComment.length <= 4) {
+      document.getElementById('new-comment-status').style.display = 'flex';
+      setTimeout(() => {
+        document.getElementById('new-comment-status').style.display = 'none';
+      }, 2250);
+    } else {
+      editComment(commentId, newComment);
+    }
   });
 };
 

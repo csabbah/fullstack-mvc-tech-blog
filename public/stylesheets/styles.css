@@ -93,6 +93,9 @@ nav a:active {
   color: rgba(255, 255, 255, 0.6);
 }
 
+.navItem {
+  cursor: pointer;
+}
 .navItem.active {
   color: var(--main-color);
 }
@@ -217,6 +220,16 @@ nav a:active {
 .confirm-comment {
   display: none;
   padding: 3px 24px;
+}
+
+#new-comment-status {
+  color: red;
+  display: none;
+  font-size: 15px;
+  position: absolute;
+  right: 479px;
+  width: 310px;
+  top: 80px;
 }
 #comment-wrapper {
   display: flex;
