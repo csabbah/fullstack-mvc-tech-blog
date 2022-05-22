@@ -188,14 +188,19 @@ nav a:active {
   width: 70%;
   margin: 0 8px;
 }
+
 #single-comment {
   position: relative;
   display: flex;
   align-items: flex-start;
-  height: 100px;
+  height: 105px;
   margin: 10px 0;
   background-color: rgba(0, 0, 0, 0.04);
   border-radius: 10px;
+}
+
+.users-comment {
+  background-color: rgba(118, 234, 151, 0.2) !important;
 }
 
 #comment-wrapper {
@@ -214,9 +219,19 @@ nav a:active {
   font-size: 18px;
   margin-left: 10px;
 }
+
 #user {
   font-weight: 700;
   margin-right: 10px;
+}
+
+#comment-control {
+  position: absolute;
+  right: 10px;
+}
+
+.delete-comment {
+  margin-left: 5px;
 }
 
 #comment-date {

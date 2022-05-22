@@ -20,17 +20,31 @@
       ></textarea>
     {{/if}}
   </form>
-
   <hr id='comment-section-divider' />
   <div id='comment-section'>
     {{#if post.comments}}
       {{#each post.comments as |comment|}}
+        {{! #each post.comments == an object with an array ('comments')
+        #each post is the same as saying post.comments.forEach(comment) }}
+        {{! If the boolean is true, that means that comment username is equal to the 
+        current signed in user's username }}
+        {{#if comment.usersComment}}
+        <div id="single-comment" class="users-comment">
+        {{!-- Add the comment id to the edit/delete button so we can extract the value in the click event listener  --}}
+        <div id="comment-control">
+          <button data-comment-id="{{comment.commentId}}" class='edit-comment'>Edit</button>
+          <button data-comment-id="{{comment.commentId}}" class='delete-comment'>Delete</button>
+        </div>
+        {{else}}
         <div id='single-comment'>
+  
+          {{/if}}
           <div id='comment-wrapper'>
             <p id='user'>{{comment.user}}</p>
             -
             <p id='comment'>{{comment.text}}</p>
           </div>
+          {{! format_date is a helper function we created in utils/helpers }}
           <p id='comment-date'>{{format_date comment.date}}</p>
         </div>
       {{/each}}
@@ -40,3 +54,5 @@
   </div>
 </div>
 <script src='/javascript/post-comment.js'></script>
+<script src='/javascript/edit-comment.js'></script>
+<script src='/javascript/delete-comment.js'></script>

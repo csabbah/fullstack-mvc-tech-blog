@@ -80,12 +80,20 @@ router.get('/post/:id', (req, res) => {
         let commentText = dbPostData.dataValues.comments[i].comment_text;
         let commentDate =
           dbPostData.dataValues.comments[i].dataValues.created_at;
+        let user_id = dbPostData.dataValues.comments[i].dataValues.user_id;
+        let comment_id = dbPostData.dataValues.comments[i].dataValues.id;
+
         post.comments.push({
           user: username,
+          userId: user_id,
           text: commentText,
           date: commentDate,
+          commentId: comment_id,
+          // Check the username of each comment and return 'true' if username matches logged in user
+          usersComment: username == req.session.username,
         });
       }
+
       res.render('single-post', {
         post,
         loggedIn: req.session.loggedIn,

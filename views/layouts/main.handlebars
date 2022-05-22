@@ -16,6 +16,8 @@
         <nav>
           <a class='navItem' href='/'>Home</a>
           <a class='navItem' href='/dashboard'>Dashboard</a>
+          {{! loggedIn is a sessions value we created (saved) when a user makes an account
+          and logs in, from there, it becomes accessible via all routes }}
           {{#if loggedIn}}
             <a class='navItem' id='logout'>Logout</a>
           {{else}}
@@ -24,6 +26,7 @@
         </nav>
         {{! Empty element to be used in tandem with space-between to fill in required space }}
         <div id='empty'>
+          {{! If the username is available, display  it }}
           {{#if username}}
             <p style='color: white;'><span style='font-size: 18px'>Logged in as</span>
               <em style='font-weight: 800'>{{username}}</em></p>
