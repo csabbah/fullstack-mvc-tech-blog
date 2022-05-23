@@ -1,7 +1,7 @@
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta name='viewport' content='width=device-width, user-scalable=no' />
     <link
       rel='stylesheet'
       href='../../stylesheets/styles.css'
@@ -24,14 +24,11 @@
             <a class='navItem' href='/login'>Login</a>
           {{/if}}
         </nav>
-        {{! Empty element to be used in tandem with space-between to fill in required space }}
-        <div id='empty'>
-          {{! If the username is available, display  it }}
-          {{#if username}}
-            <p style='color: white;'><span style='font-size: 18px'>Logged in as</span>
-              <em style='font-weight: 800'>{{username}}</em></p>
-          {{/if}}
-        </div>
+        {{! If the username is available, display  it }}
+        {{#if username}}
+          <p id='loggedin'><span>Logged in as</span>
+            <em style='font-weight: 800'>{{username}}</em></p>
+        {{/if}}
         <div id='bg'></div>
       </header>
       <main>

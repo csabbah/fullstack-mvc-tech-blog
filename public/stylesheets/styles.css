@@ -12,7 +12,7 @@
 }
 
 button {
-  padding: 3px 30px;
+  padding: 6px 30px;
   border: none;
   border-radius: 5px;
   margin-top: 10px;
@@ -49,7 +49,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 20px 32px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
 }
 
 #bg {
@@ -73,6 +73,7 @@ header h1 {
   padding: 5px 10px;
   border-radius: 5px;
   background-color: var(--main-color);
+  text-align: center;
 }
 
 nav a {
@@ -100,6 +101,56 @@ nav a:active {
   color: var(--main-color);
 }
 
+#loggedin {
+  color: white;
+  font-size: 18px;
+}
+@media (max-width: 1000px) {
+  header {
+    padding-top: 25px;
+  }
+  header h1 {
+    font-size: 25px;
+    width: 175px;
+  }
+
+  nav a {
+    font-size: 18px;
+    margin-left: 8px;
+  }
+
+  #loggedin {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 670px) {
+  header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 10px;
+  }
+
+  header h1 {
+    font-size: 13px;
+    width: 100px;
+  }
+
+  nav a {
+    position: relative;
+    top: 7px;
+    font-size: 15px;
+    margin-left: 3px;
+  }
+
+  #loggedin {
+    position: relative;
+    top: 12px;
+    font-size: 10px;
+  }
+}
+
 /* -------- --------- --------- Single Post (and one dashboard styling) */
 #homepage-posts,
 #dashboard-posts {
@@ -124,7 +175,7 @@ nav a:active {
 
 #post-header {
   background-color: var(--main-color);
-  height: 40px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -163,23 +214,79 @@ nav a:active {
 }
 
 #post-title {
-  font-size: 20px;
+  font-size: 18px;
 }
 #post-date {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 #post-body {
   overflow: scroll;
   padding: 15px 15px;
+  padding-right: 55px;
   height: 120px;
   font-size: 18px;
 }
 
 #homepage-posts #post-body {
-  height: 80px;
-  font-size: 18px;
+  height: 100px;
+  font-size: 16px;
   color: black;
+}
+
+@media (max-width: 1000px) {
+  #dashboard-posts #single-post {
+    width: 90%;
+  }
+
+  #post-title {
+    font-size: 16px;
+  }
+
+  #post-header {
+    height: 75px;
+  }
+
+  #homepage-posts #post-body {
+    height: 130px;
+  }
+
+  #single-post {
+    width: 90%;
+  }
+}
+
+@media (max-width: 670px) {
+  #post-header {
+    height: 110px;
+  }
+  #post-title {
+    font-size: 15px;
+  }
+
+  #post-title,
+  #post-date {
+    margin: 4px 15px;
+  }
+
+  #post-date {
+    font-size: 13px;
+  }
+
+  #homepage-posts #post-body {
+    height: 200px;
+  }
+
+  #post-body {
+    overflow-wrap: break-word;
+    height: 180px;
+    padding-right: 25px;
+    font-size: 15px;
+  }
+
+  #single-post {
+    width: 95%;
+  }
 }
 
 /* ----------------- Single post */
@@ -196,7 +303,7 @@ nav a:active {
   position: relative;
   display: flex;
   align-items: flex-start;
-  height: 105px;
+  height: 145px;
   margin: 10px 0;
   background-color: rgba(0, 0, 0, 0.04);
   border-radius: 10px;
@@ -207,9 +314,12 @@ nav a:active {
 }
 
 .edit-comment-input {
-  margin-left: 10px;
-  width: 633px;
-  height: 84px;
+  left: 90px;
+  margin-left: 0px;
+  top: 10px;
+  position: absolute;
+  width: 80%;
+  height: 96px;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.7);
   background-color: transparent;
@@ -220,16 +330,21 @@ nav a:active {
 .confirm-comment {
   display: none;
   padding: 3px 24px;
+  position: relative;
+  left: 78px;
+  bottom: -3px;
 }
 
 #new-comment-status {
   color: red;
   display: none;
   font-size: 15px;
+  z-index: 2;
   position: absolute;
   right: 479px;
   width: 310px;
-  top: 80px;
+  left: 90px;
+  bottom: 40px;
 }
 #comment-wrapper {
   display: flex;
@@ -256,7 +371,12 @@ nav a:active {
 
 #comment-control {
   position: absolute;
-  right: 10px;
+  bottom: 10px;
+  left: 10px;
+}
+
+#comment-control {
+  display: flex;
 }
 
 .delete-comment {
@@ -298,6 +418,125 @@ nav a:active {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+#comment-status {
+  width: 60%;
+  font-family: inherit;
+  font-weight: 400;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+@media (max-width: 1000px) {
+  #comment-section {
+    width: 85%;
+  }
+
+  #comment {
+    font-size: 16px;
+    width: 90%;
+    margin-left: 10px;
+  }
+
+  #comment-section-divider {
+    width: 85%;
+  }
+
+  #comment-field {
+    width: 70%;
+  }
+
+  .edit-comment-input {
+    left: 90px;
+    margin-left: 0px;
+    top: 12px;
+    position: absolute;
+    width: 80%;
+    height: 96px;
+  }
+
+  #single-comment {
+    height: 150px;
+  }
+}
+
+@media (max-width: 670px) {
+  #comment-section {
+    width: 95%;
+  }
+  #comment {
+    font-size: 16px;
+    width: 85%;
+    margin-left: 2px;
+    margin-left: 2px;
+  }
+
+  #comment-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 5px 10px;
+  }
+
+  #single-comment {
+    height: 225px;
+  }
+
+  #user {
+    margin-top: 2px;
+    margin-left: 2px;
+    margin-bottom: 5px;
+  }
+
+  #comment-status {
+    width: 90%;
+  }
+
+  #comment-field {
+    width: 90%;
+  }
+
+  #comment-section-divider {
+    width: 95%;
+  }
+
+  #comment-control {
+    display: flex;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .confirm-comment,
+  .edit-comment,
+  .delete-comment {
+    padding: 3px 20px;
+  }
+
+  .confirm-comment {
+    margin-left: 0;
+    left: 0;
+    bottom: 0px;
+  }
+
+  .edit-comment-input {
+    margin-left: 0px;
+    top: 36px;
+    position: absolute;
+    width: 90%;
+    height: 144px;
+    left: 10px;
+  }
+
+  #new-comment-status {
+    left: 10px;
+    bottom: 44px;
+  }
+
+  #post-user {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
 /* -------- --------- --------- Login / Sign up / Dashboard*/
 .login-container,
 .signup-container {
@@ -330,6 +569,7 @@ nav a:active {
 #signup-form input,
 #addPost-form input {
   margin-bottom: 6px;
+  height: 35px;
   width: 275px;
   padding: 3px 0;
   text-indent: 7px;
@@ -352,7 +592,7 @@ nav a:active {
 #loginHr {
   margin-bottom: 30px;
   margin-top: 35px;
-  width: 35%;
+  width: 275px;
   margin-left: 32px;
   opacity: 0.5;
 }
@@ -362,14 +602,6 @@ nav a:active {
   font-family: inherit;
   font-weight: 400;
   margin-top: 10px;
-  font-size: 14px;
-}
-
-#comment-status {
-  width: 60%;
-  font-family: inherit;
-  font-weight: 400;
-  margin-top: 8px;
   font-size: 14px;
 }
 
@@ -412,7 +644,7 @@ nav a:active {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   resize: none;
-  width: 50%;
+  width: 70%;
   height: 100px;
   font-size: 15px;
   border-radius: 5px;
@@ -422,7 +654,7 @@ nav a:active {
 }
 
 #addPost-form input {
-  width: 50%;
+  width: 70%;
   border-radius: 5px;
 }
 
@@ -463,8 +695,8 @@ nav a:active {
   display: none;
   position: absolute;
   color: red;
-  font-size: 15px;
-  left: 8px;
+  font-size: 16px;
+  left: 10px;
   bottom: 25px;
 }
 .edit-title-input,
@@ -483,11 +715,81 @@ nav a:active {
 
 .edit-body-input {
   resize: none;
-  width: 97.8%;
+  width: 98%;
   height: 120px;
-  margin-top: 3px;
+  margin-top: 10px;
 }
 
 .confirm-post {
   display: none;
+}
+
+@media (max-width: 1000px) {
+  #post-body {
+    height: 190px;
+  }
+
+  .edit-body-input {
+    resize: none;
+    width: 97%;
+    height: 180px;
+    margin-top: 9px;
+  }
+}
+
+@media (max-width: 670px) {
+  #edit-post-status {
+    font-size: 15px;
+    left: 18px;
+    bottom: 59px;
+    width: 230px;
+  }
+
+  .edit-body-input {
+    resize: none;
+    width: 94%;
+    height: 200px;
+    margin-top: 10px;
+  }
+
+  #addPost-form textarea,
+  #addPost-form input {
+    width: 85%;
+  }
+  #dashboard-posts #single-post {
+    width: 95%;
+  }
+  #addpost-status {
+    width: 80%;
+  }
+
+  #dashboardHr {
+    width: 80%;
+  }
+
+  .view-comments,
+  .edit-post-id,
+  .delete-post-id {
+    width: 120px;
+    font-size: 13px;
+    padding: 10px 10px;
+  }
+
+  #post-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  #post-controls button:nth-child(2) {
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+
+  #post-controls button:nth-child(1) {
+    margin-right: 5px;
+    margin-left: 10px;
+  }
 }

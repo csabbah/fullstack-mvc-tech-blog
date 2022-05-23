@@ -6,7 +6,7 @@
 
 - [Description](#Description)
 - [Installation](#Installation)
-- [Usage](#Local-Usage)
+- [Local Usage](#Local-Usage)
 - [Links](#Links)
 - [Questions](#Questions)
 - [License](#License)
@@ -77,7 +77,7 @@ From there, you are ready to use the application!
 
 ## Links
 
-Link to the live application...
+[Link to live application](https://calm-temple-51465.herokuapp.com/)
 
 ## Built With
 
