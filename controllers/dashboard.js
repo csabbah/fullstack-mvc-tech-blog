@@ -44,15 +44,6 @@ router.get('/', withAuth, (req, res) => {
         });
       }
       posts.reverse();
-
-      // UPDATE THIS LINE OF BLOCK
-      // For each comment, push it to the array inside our object
-      // for (let i = 0; i < dbPostData.dataValues.comments.length; i++) {
-      //   let username = dbPostData.dataValues.comments[i].user.username;
-      //   let commentText = dbPostData.dataValues.comments[i].comment_text;
-      //   post.comments.push({ user: username, text: commentText });
-      // }
-
       res.render('dashboard', {
         posts,
         loggedIn: req.session.loggedIn,
