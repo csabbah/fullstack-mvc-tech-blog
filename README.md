@@ -6,7 +6,7 @@
 
 - [Description](#Description)
 - [Installation](#Installation)
-- [Usage](#Usage)
+- [Usage](#Local-Usage)
 - [Links](#Links)
 - [Questions](#Questions)
 - [License](#License)
@@ -31,7 +31,7 @@ git clone
 npm install
 ```
 
-## Usage (Locally)
+## Local-Usage
 
 # Initial setup
 
