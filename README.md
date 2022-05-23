@@ -15,7 +15,7 @@
 
 ## Description
 
-This back end node application focuses on...
+This is a full-stack CSM-style blog site where users can publish posts and comment on other users' blog posts. With login authentication, logged-in users have access to the dashboard where they can also edit/delete their posts/comments. MVC structured, this application makes use of multiple packages such as handlebars, bcrypt, express.sessions, sequelize and more to ensure the most optimized experience.
 
 ## Installation
 
@@ -31,11 +31,11 @@ git clone
 npm install
 ```
 
-## Usage
+## Usage (Locally)
 
 # Initial setup
 
-Create a '.env' file in the main directory path and include the following data:
+Create an '.env' file in the main directory path and include the following data:
 
 ```
 DB_NAME='your_database_name'
@@ -64,7 +64,7 @@ control + c
 To seed the database with the starter data, type this command in terminal:
 
 ```
-npm run seed
+npm run seeds
 ```
 
 To start the server, type in terminal:
