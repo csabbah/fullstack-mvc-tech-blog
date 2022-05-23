@@ -1,5 +1,4 @@
 const router = require('express').Router();
-require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
 // In this path, the main.handlebars template renders always and inside the {{{body}}} section....
