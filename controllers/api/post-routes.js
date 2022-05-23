@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../../models');
+const { Post } = require('../../models');
 
 // Create a new post using the form input values from the dashboard page (template)
 router.post('/', (req, res) => {
