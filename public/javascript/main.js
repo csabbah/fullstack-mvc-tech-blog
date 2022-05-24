@@ -25,3 +25,12 @@ if (navItems.length == 2) {
     navItems[2].classList.add('active');
   }
 }
+
+// Update header styling based on if a certain element exist
+const headerHead = document.getElementById('header-head');
+const loggedInActive = document.getElementById('loggedin');
+if (loggedInActive) {
+  headerHead.style.justifyContent = 'space-between';
+} else {
+  headerHead.style.justifyContent = 'center';
+}
