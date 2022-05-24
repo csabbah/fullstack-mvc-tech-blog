@@ -12,7 +12,14 @@
   <body>
     <div class='wrapper'>
       <header>
-        <h1 id='header-logo'>The Tech Blog</h1>
+        <div id='header-head'>
+          <h1 id='header-logo'>The Tech Blog</h1>
+          {{! If the username is available, display  it }}
+          {{#if username}}
+            <p id='loggedin'><span>Logged in as</span>
+              <em style='font-weight: 800'>{{username}}</em></p>
+          {{/if}}
+        </div>
         <nav>
           <a class='navItem' href='/'>Home</a>
           <a class='navItem' href='/dashboard'>Dashboard</a>
@@ -24,11 +31,7 @@
             <a class='navItem' href='/login'>Login</a>
           {{/if}}
         </nav>
-        {{! If the username is available, display  it }}
-        {{#if username}}
-          <p id='loggedin'><span>Logged in as</span>
-            <em style='font-weight: 800'>{{username}}</em></p>
-        {{/if}}
+
         <div id='bg'></div>
       </header>
       <main>
