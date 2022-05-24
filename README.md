@@ -77,7 +77,7 @@ From there, you are ready to use the application!
 
 ## Links
 
-[Link to live application](https://calm-temple-51465.herokuapp.com/)
+[Link to live application](https://fullstack-mvc-techblog.herokuapp.com/)
 
 ## Built With
 
