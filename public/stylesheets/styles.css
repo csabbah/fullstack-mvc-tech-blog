@@ -522,7 +522,7 @@ nav a:active {
 
   #comment-field {
     width: 90%;
-    font-size: 20px;
+    font-size: 18px;
   }
 
   #comment-section-divider {
@@ -549,7 +549,7 @@ nav a:active {
 
   .edit-comment-input {
     margin-left: 0px;
-    font-size: 20px;
+    font-size: 18px;
     top: 36px;
     position: absolute;
     width: 90%;
@@ -741,7 +741,7 @@ nav a:active {
 }
 
 .edit-title-input {
-  font-size: 20px;
+  font-size: 18px;
   background-color: var(--main-color);
 }
 
@@ -778,7 +778,7 @@ nav a:active {
   }
 
   .edit-body-input {
-    font-size: 20px;
+    font-size: 18px;
     resize: none;
     width: 94%;
     height: 200px;
